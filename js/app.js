@@ -35,6 +35,25 @@
 
 // build the nav
 
+const navBarUL = document.getElementById('navbar__list')
+const allSections = document.getElementsByTagName('section');
+
+function createList (){
+    for (let i = 0; i < allSections.length; i++){
+        const listItems = document.createElement('li');
+        const anchorItems = document.createElement('a');
+            anchorItems.textContent = " " + allSections[i].getAttribute('data-nav');
+            anchorItems.href = "#" + allSections[i].getAttribute('id');
+            anchorItems.setAttribute('target','_self');
+            anchorItems.className = "menu__link";
+        navBarUL.appendChild(listItems);
+        listItems.appendChild(anchorItems);
+    }
+    
+}
+
+createList();
+
 
 // Add class 'active' to section when near top of viewport
 
