@@ -58,7 +58,21 @@ createList();
 // Add class 'active' to section when near top of viewport
 
 
-// Scroll to anchor ID using scrollTO event
+// Scroll to anchor ID
+
+const allAnchors = document.querySelectorAll('a');
+const list = document.querySelectorAll('li');
+
+
+for (let i = 0; i < list.length; i++){
+    allAnchors[i].addEventListener('click', function(element){
+        element.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+};
+
 
 
 /**
