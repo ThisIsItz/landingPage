@@ -39,24 +39,43 @@ createList();
 // Add class 'active' to section when near top of viewport
 
 
-function elementFromTop(elem, classToAdd, distanceFromTop, unit) {
-    var winY = window.innerHeight || document.documentElement.clientHeight,
-    elemLength = elem.length, distTop, distPercent, distPixels, distUnit, i;
-    for (i = 0; i < elemLength; ++i) {
-        distTop = elem[i].getBoundingClientRect().top;
-        distPercent = Math.round((distTop / winY) * 100);
-        distPixels = Math.round(distTop);
-        distUnit = unit == 'percent' ? distPercent : distPixels;
-        if (distUnit <= distanceFromTop) {
-           if (!hasClass(elem[i], classToAdd)) { addClass(elem[i], classToAdd); }
-           } else {
-           delClass(elem[i], classToAdd);
-           }
-        }
-}
-// params: element id, class to add, distance from top, unit ('percent' or 'pixels')
+function activateSection (){
+  
+    for (let i = 0; i < allSections.length; i++){
 
-elementFromTop('allSections', 'your-active-class', '20', 'px');
+        console.log("Section " + allSections[i].id + " is " + elementInViewport(allSections[i]));
+        if (elementInViewport(allSections[i]) == true){
+            let element = document.getElementById('section'+i);
+                for (let i = 0; i < element.length; i++){
+                    
+                }
+            console.log(element);
+        }
+
+    }    
+}
+
+  function elementInViewport(el) {
+    let top = el.offsetTop;
+    let left = el.offsetLeft;
+    let width = el.offsetWidth;
+    let height = el.offsetHeight;
+  
+    while(el.offsetParent) {
+      el = el.offsetParent;
+      top += el.offsetTop;
+      left += el.offsetLeft;
+    }
+  
+    return (
+      top < (window.pageYOffset + window.innerHeight) &&
+      left < (window.pageXOffset + window.innerWidth) &&
+      (top + height) > window.pageYOffset &&
+      (left + width) > window.pageXOffset
+    );
+  }
+
+
 
 
 // Scroll to anchor ID
@@ -84,39 +103,26 @@ for (let i = 0; i < list.length; i++){
 
 
 
-//let hideButton = document.querySelectorAll('.active');
-//let inputButton = document.querySelectorAll('input');
-//
+
+
+//let hideButton = document.querySelectorAll('input');
 //
 //    
 //    for (let i = 0; i < hideButton.length; i++){
 //        let content = document.querySelector('.text' + i);
-//        content.style.display = "block";
-//            if (content.style.display=="block"){
-//                console.log('block');
-//            }else{
-//                console.log('block');
-//            }
-//        
-//        
-//        
+//        if (hideButton[i].className == "active"){
 //            hideButton[i].addEventListener('click', function(){
-//                console.log("desactivar");
-//                content.style.display = "none"
-//                hideButton[i].className = "unactive";
+//                content.style.display = "none";
+//                hideButton[i].classList.remove("active");
 //                hideButton[i].value = "Show";
+//                console.log(hideButton);
 //            });
+//        }else{
+//            console.log('otro');
+//        }
 //    }
-//
-//    
 
 
-
-//hideButton.addEventListener('click', function(){
-//   console.log('button');
-//    contentText.style
-//    
-//});
 
 // Build menu 
 
