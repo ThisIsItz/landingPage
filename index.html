@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900|Merriweather&display=swap" rel="stylesheet">  <!-- Load Styles -->
   <link href="css/styles.css" rel="stylesheet">
 </head>
-<body onscroll="activateSection()">
+<body id='test' onscroll="activateSection()">
   <!-- HTML Follows BEM naming conventions 
   IDs are only used for sections to connect menu achors to sections -->
   <header class="page__header">
@@ -26,7 +26,7 @@
     a data attribute that will populate the li node.
     Adding more sections will automatically populate nav.
     The first section is set to active class by default -->
-    <section id="section1" data-nav="Section 1" class="your-active-class">
+    <section id="section1" data-nav="Section 1" class="your-active-class section-position">
       <div class="landing__container">
         <h2>Section 1</h2>
         <div class="text0">
@@ -37,7 +37,7 @@
       </div>
         <input type="button" class="active" value="Hide"> 
     </section>
-    <section id="section2" data-nav="Section 2">
+    <section id="section2" data-nav="Section 2" class="section-position">
       <div class="landing__container">
         <h2>Section 2</h2>
         <div class="text1">
@@ -48,7 +48,7 @@
       </div>
         <input type="button" class="active" value="Hide">        
     </section>
-    <section id="section3" data-nav="Section 3">
+    <section id="section3" data-nav="Section 3" class="section-position">
       <div class="landing__container">
         <h2>Section 3</h2>
         <div class="text2">
@@ -59,7 +59,7 @@
       </div>
         <input type="button" class="active" value="Hide"> 
     </section>
-    <section id="section4" data-nav="Section 4">
+    <section id="section4" data-nav="Section 4" class="section-position">
       <div class="landing__container">
         <h2>Section 4</h2>
         <div class="text3">

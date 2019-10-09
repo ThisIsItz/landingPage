@@ -41,18 +41,34 @@ createList();
 
 function activateSection (){
   
-    for (let i = 0; i < allSections.length; i++){
+    // for (let i = 0; i < allSections.length; i++){
+    //
+    //     console.log("Section " + allSections[i].id + " is " + elementInViewport(allSections[i]));
+    //     if (elementInViewport(allSections[i]) == true){
+    //         let element = document.getElementById('section'+i);
+    //             for (let i = 0; i < element.length; i++){
+    //
+    //             }
 
-        console.log("Section " + allSections[i].id + " is " + elementInViewport(allSections[i]));
-        if (elementInViewport(allSections[i]) == true){
-            let element = document.getElementById('section'+i);
-                for (let i = 0; i < element.length; i++){
-                    
-                }
-            console.log(element);
+    // var y = elmnt.scrollTop;
+    var testDiv = document.querySelectorAll(".section-position");
+    console.log(testDiv[0].offsetTop + testDiv[0].offsetHeight - 5);
+    for(var x=0;x<testDiv.length;x++){
+        if(testDiv[x].offsetTop + testDiv[x].offsetHeight - 5  > window.pageYOffset && testDiv[x].offsetTop < window.pageYOffset){
+            testDiv[x].classList.add('your-active-class');
+        }else{
+            testDiv[x].classList.remove('your-active-class');
         }
+    }
 
-    }    
+
+
+    console.log(window.pageYOffset);
+
+
+    //     }
+    //
+    // }
 }
 
   function elementInViewport(el) {
