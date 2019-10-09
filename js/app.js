@@ -44,10 +44,14 @@ function activateSection (){
     const testDiv = document.querySelectorAll(".section-position");
 
     for(let i = 0; i < testDiv.length; i++){
-        if(testDiv[i].offsetTop + testDiv[i].offsetHeight - 4 > window.pageYOffset && testDiv[i].offsetTop < window.pageYOffset){
+        if(testDiv[i].offsetTop + testDiv[i].offsetHeight - 400 > window.pageYOffset && testDiv[i].offsetTop < window.pageYOffset){
             testDiv[i].classList.add('your-active-class');
+            allAnchors[i].style.color = "white";
+            allAnchors[i].style.backgroundColor = "black";
         }else{
             testDiv[i].classList.remove('your-active-class');
+            allAnchors[i].style.color = "black";
+                        allAnchors[i].style.backgroundColor = "white";
         }
     }
 
