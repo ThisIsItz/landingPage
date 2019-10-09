@@ -41,57 +41,18 @@ createList();
 
 function activateSection (){
   
-    // for (let i = 0; i < allSections.length; i++){
-    //
-    //     console.log("Section " + allSections[i].id + " is " + elementInViewport(allSections[i]));
-    //     if (elementInViewport(allSections[i]) == true){
-    //         let element = document.getElementById('section'+i);
-    //             for (let i = 0; i < element.length; i++){
-    //
-    //             }
+    const testDiv = document.querySelectorAll(".section-position");
 
-    // var y = elmnt.scrollTop;
-    var testDiv = document.querySelectorAll(".section-position");
-    console.log(testDiv[0].offsetTop + testDiv[0].offsetHeight - 5);
-    for(var x=0;x<testDiv.length;x++){
-        if(testDiv[x].offsetTop + testDiv[x].offsetHeight - 5  > window.pageYOffset && testDiv[x].offsetTop < window.pageYOffset){
-            testDiv[x].classList.add('your-active-class');
+    for(let i = 0; i < testDiv.length; i++){
+        if(testDiv[i].offsetTop + testDiv[i].offsetHeight - 4 > window.pageYOffset && testDiv[i].offsetTop < window.pageYOffset){
+            testDiv[i].classList.add('your-active-class');
         }else{
-            testDiv[x].classList.remove('your-active-class');
+            testDiv[i].classList.remove('your-active-class');
         }
     }
 
-
-
     console.log(window.pageYOffset);
-
-
-    //     }
-    //
-    // }
 }
-
-  function elementInViewport(el) {
-    let top = el.offsetTop;
-    let left = el.offsetLeft;
-    let width = el.offsetWidth;
-    let height = el.offsetHeight;
-  
-    while(el.offsetParent) {
-      el = el.offsetParent;
-      top += el.offsetTop;
-      left += el.offsetLeft;
-    }
-  
-    return (
-      top < (window.pageYOffset + window.innerHeight) &&
-      left < (window.pageXOffset + window.innerWidth) &&
-      (top + height) > window.pageYOffset &&
-      (left + width) > window.pageXOffset
-    );
-  }
-
-
 
 
 // Scroll to anchor ID
