@@ -85,26 +85,6 @@ for (let i = 0; i < list.length; i++){
 
 
 
-
-//let hideButton = document.querySelectorAll('input');
-//
-//    
-//    for (let i = 0; i < hideButton.length; i++){
-//        let content = document.querySelector('.text' + i);
-//        if (hideButton[i].className == "active"){
-//            hideButton[i].addEventListener('click', function(){
-//                content.style.display = "none";
-//                hideButton[i].classList.remove("active");
-//                hideButton[i].value = "Show";
-//                console.log(hideButton);
-//            });
-//        }else{
-//            console.log('otro');
-//        }
-//    }
-
-
-
 // Build menu 
 
 // Scroll to section on link click
