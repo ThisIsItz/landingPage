@@ -109,6 +109,10 @@ section {
     color: #fff;
 }
 
+.active-anchor{
+    transition: 2s;
+}
+
 
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
